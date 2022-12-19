@@ -6,13 +6,14 @@
 using namespace std;
 using namespace std::chrono;
 
-long long A[10000000];
+long long Array[10000000];
+long long Array_Elements = 10000000;// размер массива
 long double SrTimer = 0;
 string OutputData = "output.txt"; // Задать имя файла
 
 void randomArray() {
-	for (long long i = 0; i < 10000000;i++) {
-		A[i] = rand() % 10000000;
+	for (long long i = 0; i < Array_Elements;i++) {
+		Array[i] = rand() % Array_Elements;
 	}
 }
 
