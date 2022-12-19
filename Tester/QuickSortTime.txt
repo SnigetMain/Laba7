@@ -998,4 +998,4 @@ qsort test 997 : 1496 ms
 qsort test 998 : 1520 ms
 qsort test 999 : 1470 ms
 qsort test 1000 : 1532 ms
-Среднее время :1468.71
+Average Time :1468.71
