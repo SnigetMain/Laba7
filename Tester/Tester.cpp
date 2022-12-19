@@ -67,6 +67,6 @@ int main() {
 		Tester("qsort",i);// изменить только им€ сортировки 
 	}
 	ofstream file(OutputData, ios_base::app);
-	file << "—реднее врем€ :" << SrTimer / NumOfTest;
+	file << "Average Time :" << SrTimer / NumOfTest;
 	file.close();
 }
