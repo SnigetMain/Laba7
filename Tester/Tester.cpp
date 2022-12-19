@@ -40,6 +40,6 @@ int main() {
 		Tester("QuickSort",i);
 	}
 	ofstream file(OutputData, ios_base::app);
-	file << "Среднее время :" << SrTimer / NumOfTest;
+	file << "Average Time :" << SrTimer / NumOfTest;
 	file.close();
 }
