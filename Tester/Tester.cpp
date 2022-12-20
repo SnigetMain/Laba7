@@ -10,7 +10,7 @@ using namespace std::chrono;
 long long Array[10000000];
 long long Array_Elements = 10000000;// размер массива
 long double SrTimer = 0;
-string OutputData = "output.txt"; // Задать имя файла
+string OutputData = "shellSort.txt"; // Задать имя файла
 
 void randomArray() {
 	for (long long i = 0; i < Array_Elements;i++) {
@@ -18,18 +18,18 @@ void randomArray() {
 	}
 }
 
-int shellSort(int* a, int n)
+int shellSort()
 {
-	for (int gap = n / 2; gap > 0; gap /= 2)
+	for (int gap = Array_Elements / 2; gap > 0; gap /= 2)
 	{
-		for (int i = gap; i < n; i += 1)
+		for (int i = gap; i < Array_Elements; i += 1)
 		{
-			int temp = a[i];
+			int temp = Array[i];
 			int j;
-			for (j = i; j >= gap && a[j - gap] > temp; j -= gap)
-				a[j] = a[j - gap];
+			for (j = i; j >= gap && Array[j - gap] > temp; j -= gap)
+				Array[j] = Array[j - gap];
 
-			a[j] = temp;
+			Array[j] = temp;
 		}
 	}
 	return 0;
@@ -40,7 +40,7 @@ void Tester(string NameSort,int i) {
 	randomArray();
 	auto start = high_resolution_clock::now();
 	// место для функции сортировки
-
+	shellSort();
 	//............................
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<milliseconds>(stop - start);
@@ -52,9 +52,9 @@ void Tester(string NameSort,int i) {
 
 int main() {
 	srand(time(0));
-	int NumOfTest = 10;// кол-во тестов
+	int NumOfTest = 1000;// кол-во тестов
 	for (int i = 0; i < NumOfTest; i++) {
-		Tester("QuickSort",i);
+		Tester("shellSortTime",i);
 	}
 	ofstream file(OutputData, ios_base::app);
 	file << "Average Time :" << SrTimer / NumOfTest;
