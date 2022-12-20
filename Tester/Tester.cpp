@@ -17,7 +17,31 @@ void randomArray() {
 	}
 }
 
-
+void Merge(int* A, int first, int last)
+{
+    int middle, start, final, j;
+    int* mas = new int[10000000];
+    middle = (first + last) / 2;
+    start = first;
+    final = middle + 1;
+    for (j = first; j <= last; j++)
+    {
+        if ((start <= middle) && ((final > last) || (A[start] < A[final])))
+        {
+            mas[j] = A[start];
+            start++;
+        }
+        else
+        {
+            mas[j] = A[final];
+            final++;
+        }
+    }
+    for (j = first; j <= last; j++)
+    {
+        A[j] = mas[j];
+    }
+}
 void Tester(string NameSort,int i) {
 	ofstream file(OutputData, ios_base::app);
 	randomArray();
