@@ -25,7 +25,6 @@ void Merge(int* A, int first, int last)
     start = first;
     final = middle + 1;
     for (j = first; j <= last; j++)
-    {
         if ((start <= middle) && ((final > last) || (A[start] < A[final])))
         {
             mas[j] = A[start];
@@ -36,10 +35,16 @@ void Merge(int* A, int first, int last)
             mas[j] = A[final];
             final++;
         }
-    }
-    for (j = first; j <= last; j++)
+    for (j = first; j <= last; j++) A[j] = mas[j];
+    delete[]mas;
+}
+void MergeSort(int* A, int first, int last)
+{
+    if (first < last)
     {
-        A[j] = mas[j];
+        MergeSort(A, first, (first + last) / 2);
+        MergeSort(A, (first + last) / 2 + 1, last);
+        Merge(A, first, last);
     }
 }
 void Tester(string NameSort,int i) {
