@@ -1,3 +1,4 @@
 ﻿  Tester.cpp
-C:\Users\User\Documents\GitHub\Laba7\Tester\Tester.cpp(36,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\User\Documents\GitHub\Laba7\Tester\Tester.cpp(25,16): warning C4244: =: преобразование "__int64" в "int", возможна потеря данных
+C:\Users\User\Documents\GitHub\Laba7\Tester\Tester.cpp(51,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Tester.vcxproj -> C:\Users\User\Documents\GitHub\Laba7\Tester\x64\Debug\Tester.exe
