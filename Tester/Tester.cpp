@@ -34,13 +34,48 @@ int shellSort()
 	}
 	return 0;
 }
+void heapify(int N,int i)
+{
+
+    int largest = i;
+
+    int l = 2 * i + 1;
+
+    int r = 2 * i + 2;
+
+    if (l < N && Array[l] > Array[largest])
+        largest = l;
+
+    if (r < N && Array[r] > Array[largest])
+        largest = r;
+
+    if (largest != i) {
+        swap(Array[i], Array[largest]);
+
+        heapify(N, largest);
+    }
+}
+
+void heapSort()
+{
+
+    for (int i = Array_Elements / 2 - 1; i >= 0; i--)
+        heapify(Array_Elements, i);
+
+    for (int i = Array_Elements - 1; i > 0; i--) {
+
+        swap(Array[0], Array[i]);
+
+        heapify(i, 0);
+    }
+}
 
 void Tester(string NameSort,int i) {
 	ofstream file(OutputData, ios_base::app);
 	randomArray();
 	auto start = high_resolution_clock::now();
 	// место для функции сортировки
-	shellSort();
+	
 	//............................
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<milliseconds>(stop - start);
