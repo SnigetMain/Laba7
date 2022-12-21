@@ -10,7 +10,7 @@ using namespace std::chrono;
 long long Array[10000000];
 long long Array_Elements = 10000000;// размер массива
 long double SrTimer = 0;
-string OutputData = "shellSort.txt"; // Задать имя файла
+string OutputData = "HeapSortTime.txt"; // Задать имя файла
 
 void randomArray() {
 	for (long long i = 0; i < Array_Elements;i++) {
@@ -54,7 +54,7 @@ int main() {
 	srand(time(0));
 	int NumOfTest = 1000;// кол-во тестов
 	for (int i = 0; i < NumOfTest; i++) {
-		Tester("shellSortTime",i);
+		Tester("HeapSort",i);
 	}
 	ofstream file(OutputData, ios_base::app);
 	file << "Average Time :" << SrTimer / NumOfTest;
