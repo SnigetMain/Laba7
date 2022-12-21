@@ -12,7 +12,6 @@ long long Array_Elements = 10000000;// размер массива
 long double SrTimer = 0;
 string OutputData = "HeapSortTime.txt"; // Задать имя файла
 
-
 int* mas = new int[10000000];
 
 void randomArray() {
@@ -95,12 +94,26 @@ void Merge(int first, int last)
 }
 void MergeSort(int first, int last)
 {
-    if (first < last)
-    {
-        MergeSort(first, (first + last) / 2);
-        MergeSort((first + last) / 2 + 1, last);
-        Merge(first, last);
-    }
+	if (first < last)
+	{
+		MergeSort(first, (first + last) / 2);
+		MergeSort((first + last) / 2 + 1, last);
+		Merge(first, last);
+	}
+}
+void insertionSort()
+{
+	int key = 0;
+	int i = 0;
+	for (int j = 1;j < Array_Elements;j++) {
+		key = Array[j];
+		i = j - 1;
+		while (i >= 0 && Array[i] > key) {
+			Array[i + 1] = Array[i];
+			i = i - 1;
+			Array[i + 1] = key;
+		}
+	}
 }
 
 void Tester(string NameSort,int i) {
@@ -108,7 +121,7 @@ void Tester(string NameSort,int i) {
 	randomArray();
 	auto start = high_resolution_clock::now();
 	// место для функции сортировки
-    // 
+
 	//............................
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<milliseconds>(stop - start);
