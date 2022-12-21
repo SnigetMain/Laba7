@@ -998,4 +998,4 @@ MergeSort test 997 : 1626 ms
 MergeSort test 998 : 1631 ms
 MergeSort test 999 : 1639 ms
 MergeSort test 1000 : 1629 ms
-Average Time :1.629
+Average Time :1629

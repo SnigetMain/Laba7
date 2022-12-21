@@ -1,0 +1,5 @@
+1)QuickSort Average Time :1468.71
+2)MergeSort Average Time :1629
+3)ShellSort Average Time :3441.86
+4)HeapSort Average Time :11847.3
+5)InsetionSort Average Time :19498
