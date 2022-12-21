@@ -148,7 +148,6 @@ void Tester(string NameSort,int i) {
 	auto start = high_resolution_clock::now();
 	// место для функции сортировки
     
-    qsortRecursive(Array, Array_Elements);
 	//............................
 	auto stop = high_resolution_clock::now();
 	auto duration = duration_cast<milliseconds>(stop - start);
